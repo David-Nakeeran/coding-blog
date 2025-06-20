@@ -7,7 +7,12 @@ export default function DeleteForm({ postId }) {
   const deletePostWithId = deletePost.bind(null, postId);
   return (
     <form action={deletePostWithId}>
-      <button type="submit">Delete Post</button>
+      <button
+        className="text-[#ffffff] bg-[#a774fd] font-medium mb-8 border border-[#a774fd] p-4 rounded-md hover:bg-[#9d68f9] cursor-pointer"
+        type="submit"
+      >
+        Delete Post
+      </button>
     </form>
   );
 }

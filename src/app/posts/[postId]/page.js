@@ -27,9 +27,9 @@ export default async function PostIdPage({ params }) {
   const commentElements = posts.map(({ comment_id, username, comment }) => {
     console.log(comment);
     return (
-      <article key={comment_id}>
-        <h3>{username}</h3>
-        <p>{comment}</p>
+      <article key={comment_id} className="border-b border-[#b388ff] mb-10">
+        <h3>Username: {username}</h3>
+        <p>Comment: {comment}</p>
       </article>
     );
   });
@@ -37,27 +37,38 @@ export default async function PostIdPage({ params }) {
   const id = parseInt(posts[0].id);
 
   return (
-    <>
-      <div key={posts[0].id}>
-        <article>
-          <h3>{posts[0].title}</h3>
+    <section className="flex flex-col justify-center items-center w-5/6 sm:w-4/6 md:w-3/6 lg:w-2/6">
+      <div
+        key={posts[0].id}
+        className="flex flex-col justify-center items-center"
+      >
+        <article className="flex flex-col justify-center items-center">
+          <h3 className="font-semibold text-xl mb-8">{posts[0].title}</h3>
           <Image
             src={posts[0].img_url}
             alt="coding brackets"
             width={600}
             height={400}
+            className="mb-6"
           />
-          <p>{posts[0].content}</p>
+          <p className="mb-3">{posts[0].content}</p>
         </article>
-        <div>
+        <div className="flex gap-7 mb-8">
           <DeleteForm postId={id} />
-          <Link href={`/posts/${id}/update`}>Update Post</Link>
+          <Link
+            className="text-[#ffffff] bg-[#a774fd] font-medium mb-8 border border-[#a774fd] p-4 rounded-md hover:bg-[#9d68f9]"
+            href={`/posts/${id}/update`}
+          >
+            Update Post
+          </Link>
         </div>
       </div>
-      <div>
+      <div className="mb-10">
         <CommentForm postId={id} />
       </div>
-      <div>{commentElements}</div>
-    </>
+      <div className="flex flex-col justify-center items-center mb-8">
+        {commentElements}
+      </div>
+    </section>
   );
 }
