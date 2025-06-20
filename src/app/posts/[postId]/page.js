@@ -1,6 +1,4 @@
 import { db } from "@/utils/dbConnection";
-import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 import Link from "next/link";
 export default async function PostIdPage({ params }) {
   const postIdParams = await params.postId;
