@@ -1,6 +1,7 @@
 import { db } from "@/utils/dbConnection";
 import Link from "next/link";
 import DeleteForm from "@/components/DeleteForm";
+import CommentForm from "@/components/CommentForm";
 export default async function PostIdPage({ params }) {
   const postIdParams = await params.postId;
 
@@ -11,6 +12,7 @@ export default async function PostIdPage({ params }) {
         FROM posts
         LEFT JOIN comments ON posts.id = comments.post_id
         WHERE posts.id = $1
+        ORDER BY comments.created_at DESC
         `,
         [postIdParams]
       );
@@ -43,7 +45,11 @@ export default async function PostIdPage({ params }) {
         </article>
         <div>
           <DeleteForm postId={id} />
+          <Link href={`/posts/${id}/update`}>Update Post</Link>
         </div>
+      </div>
+      <div>
+        <CommentForm postId={id} />
       </div>
       <div>{commentElements}</div>
     </>
