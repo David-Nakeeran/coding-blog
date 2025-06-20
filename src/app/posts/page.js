@@ -30,7 +30,12 @@ export default async function PostsPage({ searchParams }) {
     return (
       <article key={element.id}>
         <h3>{element.title}</h3>
-        {/* <Image src={element.img_url} alt="coding brackets" width={250} /> */}
+        <Image
+          src={element.img_url}
+          alt="coding brackets"
+          width={200}
+          height={200}
+        />
         <p>{element.content}</p>
         <Link href={`/posts/${element.id}`}>Read More</Link>
       </article>
