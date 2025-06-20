@@ -28,28 +28,53 @@ export default async function PostsPage({ searchParams }) {
   }
   const postElements = posts.map((element) => {
     return (
-      <article key={element.id}>
-        <h3>{element.title}</h3>
+      <article
+        className="flex flex-col justify-center items-center gap-2 mb-10 border-b border-[#b388ff]"
+        key={element.id}
+      >
+        <h3 className="font-semibold text-xl">{element.title}</h3>
         <Image
           src={element.img_url}
           alt="coding brackets"
           width={200}
           height={200}
         />
-        <p>{element.content}</p>
-        <Link href={`/posts/${element.id}`}>Read More</Link>
+        <p className="mb-5">{element.content}</p>
+        <Link
+          className="text-[#ffffff] bg-[#a774fd] font-medium mb-8 border border-[#a774fd] p-4 rounded-md hover:bg-[#9d68f9]"
+          href={`/posts/${element.id}`}
+        >
+          Read More
+        </Link>
       </article>
     );
   });
 
   return (
-    <section>
-      <div>
-        <Link href={"/posts?sort=asc"}>Sort by latest</Link>
-        <Link href={"/posts?sort=desc"}>Sort by oldest</Link>
-        <Link href={`/posts`}>Reset</Link>
+    <section className="mb-6">
+      <div className="flex w-full justify-center gap-2 text-[#E0C074] mb-6 z-1">
+        <Link
+          className="hover:text-[#F1D99C] transition-colors duration-200 hover:border-b border-[#FFF2C5] cursor-pointer"
+          href={"/posts?sort=asc"}
+        >
+          Sort by latest
+        </Link>
+        <Link
+          className="hover:text-[#F1D99C] transition-colors duration-200 hover:border-b border-[#FFF2C5] cursor-pointer"
+          href={"/posts?sort=desc"}
+        >
+          Sort by oldest
+        </Link>
+        <Link
+          className="cursor-pointer hover:text-[#F1D99C] transition-colors duration-200 hover:border-b border-[#FFF2C5]"
+          href={`/posts`}
+        >
+          Reset
+        </Link>
       </div>
-      {postElements}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {postElements}
+      </div>
     </section>
   );
 }

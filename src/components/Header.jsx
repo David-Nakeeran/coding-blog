@@ -4,7 +4,7 @@ import logo from "@/../public/images/logo.png";
 
 export default function Header() {
   return (
-    <header className="col-span-full row-start-1 row-end-2 w-full flex justify-between items-center text-[#E0C074] ">
+    <header className="col-span-full row-start-1 row-end-2 w-full flex justify-between items-center text-[#E0C074] mb-8">
       <div>
         <Link className="flex justify-center items-center" href={"/"}>
           <Image src={logo} alt="coding brackets" width={50} />
