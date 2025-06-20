@@ -1,5 +1,6 @@
 import { db } from "@/utils/dbConnection";
 import Link from "next/link";
+import DeleteForm from "@/components/DeleteForm";
 export default async function PostIdPage({ params }) {
   const postIdParams = await params.postId;
 
@@ -30,6 +31,8 @@ export default async function PostIdPage({ params }) {
     );
   });
 
+  const id = parseInt(posts[0].id);
+
   return (
     <>
       <div key={posts[0].id}>
@@ -39,7 +42,7 @@ export default async function PostIdPage({ params }) {
           <p>{posts[0].content}</p>
         </article>
         <div>
-          <Link href={`/posts/${postIdParams}/delete`}>Delete Post!</Link>
+          <DeleteForm postId={id} />
         </div>
       </div>
       <div>{commentElements}</div>
