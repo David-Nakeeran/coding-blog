@@ -1,5 +1,6 @@
 import { db } from "@/utils/dbConnection";
 import Link from "next/link";
+import Image from "next/image";
 import DeleteForm from "@/components/DeleteForm";
 import CommentForm from "@/components/CommentForm";
 export default async function PostIdPage({ params }) {
@@ -40,7 +41,12 @@ export default async function PostIdPage({ params }) {
       <div key={posts[0].id}>
         <article>
           <h3>{posts[0].title}</h3>
-          {/* <Image src={element.img_url} alt="coding brackets" width={250} /> */}
+          <Image
+            src={posts[0].img_url}
+            alt="coding brackets"
+            width={600}
+            height={400}
+          />
           <p>{posts[0].content}</p>
         </article>
         <div>
