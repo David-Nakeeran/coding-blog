@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="grid h-dvh grid-cols-1 grid-rows-[auto_1fr_auto] place-items-center overflow-y-auto">
+        <div className="grid h-dvh grid-cols-1 grid-rows-[auto_1fr_auto] place-items-center overflow-y-auto p-3 bg-[#1e1e2f] text-[#FFF2C5]">
           <Header />
           {children}
           <Footer />
