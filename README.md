@@ -4,7 +4,7 @@ A minimalist, coding blog where developers can share posts and leave comments.
 
 ## Live Demo
 
-[Coding Blog](coding-blog-three.vercel.app)
+[Coding Blog](http://www.coding-blog-three.vercel.app)
 
 ## Overview
 
@@ -22,7 +22,7 @@ This full stack blog project allows users to:
 
 ## Reflection
 
-Unfortunately I didn't have time this weekend to work on the project.
+Unfortunately I didn't have time this weekend to work on the project. So I only achieved one stretch goal.
 
 Were there any requirements or goals that you were unable to achieve?
 
@@ -31,8 +31,6 @@ Were there any requirements or goals that you were unable to achieve?
 What was difficult about the tasks you didn't complete?
 
 - Just understanding how NextJs works in general. I believe the way I have structured the usage of server functions into an action.js file is correct?
-
-- Styling takes me a long time!
 
 ## Technologies Used
 
@@ -49,6 +47,7 @@ What was difficult about the tasks you didn't complete?
 ## References
 
 - https://pixabay.com/vectors/coding-programming-html-tag-code-7224945/
+
 - https://stackoverflow.com/questions/7513040/how-to-sort-objects-by-date-ascending-order
 
 - https://react.dev/reference/react-dom/components/input
