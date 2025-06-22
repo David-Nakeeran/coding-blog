@@ -4,7 +4,7 @@ A minimalist, coding blog where developers can share posts and leave comments.
 
 ## Live Demo
 
-[Coding Blog](http://www.coding-blog-three.vercel.app)
+[Coding Blog](https://coding-blog-davids-projects-5e33b643.vercel.app/)
 
 ## Overview
 
